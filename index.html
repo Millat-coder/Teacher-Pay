@@ -1,36 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Pay</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teacher Pay</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  Teacher Pay
-</header>
-
 <div class="container">
-  <div class="card">
-    <h2>Add Teacher</h2>
-    <br>
 
-    <input type="text" id="teacherName" placeholder="Teacher Name">
-    <br><br>
+<h1>Teacher Pay</h1>
 
-    <input type="text" id="teacherSubject" placeholder="Subject">
-    <br><br>
+<div id="authBox">
 
-    <input type="number" id="teacherFee" placeholder="Per Class Fee">
-    <br><br>
+<h2>Login</h2>
 
-    <button onclick="addTeacher()">Add Teacher</button>
-  </div>
+<input type="email" id="loginEmail" placeholder="Email">
+
+<input type="password" id="loginPassword" placeholder="Password">
+
+<button id="loginBtn">Login</button>
+
+<p>Don't have an account?</p>
+
+<button id="showSignup">Create Account</button>
+
 </div>
 
-<script src="script.js"></script>
+
+<div id="signupBox" style="display:none;">
+
+<h2>Create Account</h2>
+
+<input type="email" id="signupEmail" placeholder="Email">
+
+<input type="password" id="signupPassword" placeholder="Password">
+
+<button id="signupBtn">Sign Up</button>
+
+<button id="showLogin">Back To Login</button>
+
+</div>
+
+
+<div id="dashboard" style="display:none;">
+
+<h2>Add Teacher</h2>
+
+<input type="text" id="teacherName" placeholder="Teacher Name">
+
+<input type="text" id="teacherSubject" placeholder="Subject">
+
+<input type="number" id="teacherFee" placeholder="Per Class Fee">
+
+<button id="addTeacherBtn">Add Teacher</button>
+
+<hr>
+
+<div id="teacherList"></div>
+
+<br>
+
+<button id="logoutBtn">Logout</button>
+
+</div>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
 
 </body>
 </html>
