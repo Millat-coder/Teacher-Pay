@@ -4,18 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teacher Pay</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="app">
-    <h1>Teacher Pay</h1>
-    <p>Welcome to your Teacher Payment Manager.</p>
+<header>
+  Teacher Pay
+</header>
 
-    <button>Add Teacher</button>
+<div class="container">
+  <div class="card">
+    <h2>Add Teacher</h2>
+    <br>
+
+    <input type="text" id="teacherName" placeholder="Teacher Name">
+    <br><br>
+
+    <input type="text" id="teacherSubject" placeholder="Subject">
+    <br><br>
+
+    <input type="number" id="teacherFee" placeholder="Per Class Fee">
+    <br><br>
+
+    <button onclick="addTeacher()">Add Teacher</button>
   </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
