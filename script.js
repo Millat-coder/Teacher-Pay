@@ -62,7 +62,6 @@ function renderTeachers(list = teachers) {
 <p><b>📝 Note:</b> ${teacher.note || "-"}</p>
 
 <p><b>Status:</b> ${teacher.paid ? "✅ Paid" : "❌ Due"}</p>
-
 <p><b>🟢 Present:</b> ${teacher.present}</p>
 
 <p><b>🔴 Absent:</b> ${teacher.absent}</p>
@@ -74,7 +73,6 @@ function renderTeachers(list = teachers) {
 <button onclick="markAbsent(${index})">
 🔴 Absent
 </button>
-
 <button onclick="togglePaid(${index})">
 ${teacher.paid ? "Mark Due" : "Mark Paid"}
 </button>
@@ -125,8 +123,8 @@ function addTeacher() {
         paymentDate,
         note,
         paid: false,
-present: 0,
-absent: 0
+        present: 0,
+  		absent: 0
 
     });
 
