@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Teacher-Pay</title>
+<title>Teacher Pay V2</title>
 
 <link rel="stylesheet" href="style.css">
 
-<!-- PDF Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </head>
@@ -16,9 +15,8 @@
 <body>
 
 <header>
-
-<h1>📚 Teacher-Pay</h1>
-
+<h1>📚 Teacher Pay</h1>
+<p>Personal Teacher Manager</p>
 </header>
 
 <div class="container">
@@ -27,12 +25,17 @@
 
 <div class="box">
 <h2 id="teacherCount">0</h2>
-<p>Teachers</p>
+<p>Total Teachers</p>
 </div>
 
 <div class="box">
 <h2 id="totalDue">৳0</h2>
 <p>Total Due</p>
+</div>
+
+<div class="box">
+<h2 id="paidCount">0</h2>
+<p>Paid Teachers</p>
 </div>
 
 </div>
@@ -51,15 +54,18 @@ type="text"
 id="subject"
 placeholder="Subject">
 
+<input
+type="text"
+id="phone"
+placeholder="Phone Number">
+
 <select id="paymentType">
 
-<option value="class">
-Per Class
-</option>
+<option value="Monthly">
+Monthly</option>
 
-<option value="monthly">
-Monthly
-</option>
+<option value="Per Class">
+Per Class</option>
 
 </select>
 
@@ -68,9 +74,19 @@ type="number"
 id="fee"
 placeholder="Fee">
 
+<input
+type="number"
+id="paymentDate"
+placeholder="Payment Date (1-31)">
+
+<textarea
+id="note"
+rows="3"
+placeholder="Note"></textarea>
+
 <button onclick="addTeacher()">
 
-Add Teacher
+➕ Add Teacher
 
 </button>
 
@@ -96,13 +112,13 @@ onkeyup="searchTeacher()">
 
 <button onclick="downloadPDF()">
 
-Download PDF
+📄 Download PDF
 
 </button>
 
 <button onclick="clearAll()">
 
-Delete All
+🗑 Delete All
 
 </button>
 
