@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Teacher Pay V2</title>
+<title>Teacher Pay V3</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,11 +17,20 @@
 <body>
 
 <header>
+
+<div class="header">
+
 <h1>📚 Teacher Pay</h1>
-<p>Personal Teacher Manager</p>
+
+<p>Personal Teacher Manager V3</p>
+
+</div>
+
 </header>
 
 <div class="container">
+
+<!-- Dashboard -->
 
 <div class="dashboard">
 
@@ -29,16 +40,23 @@
 </div>
 
 <div class="box">
-<h2 id="totalDue">৳0</h2>
-<p>Total Due</p>
+<h2 id="paidCount">0</h2>
+<p>Paid</p>
 </div>
 
 <div class="box">
-<h2 id="paidCount">0</h2>
-<p>Paid Teachers</p>
+<h2 id="dueCount">0</h2>
+<p>Due</p>
+</div>
+
+<div class="box">
+<h2 id="totalMoney">৳0</h2>
+<p>Total Amount</p>
 </div>
 
 </div>
+
+<!-- Add Teacher -->
 
 <div class="card">
 
@@ -62,10 +80,12 @@ placeholder="Phone Number">
 <select id="paymentType">
 
 <option value="Monthly">
-Monthly</option>
+Monthly
+</option>
 
 <option value="Per Class">
-Per Class</option>
+Per Class
+</option>
 
 </select>
 
@@ -92,9 +112,11 @@ placeholder="Note"></textarea>
 
 </div>
 
+<!-- Search -->
+
 <div class="card">
 
-<h2>Teacher List</h2>
+<h2>Search</h2>
 
 <input
 type="text"
@@ -102,31 +124,95 @@ id="search"
 placeholder="Search Teacher..."
 onkeyup="searchTeacher()">
 
+</div>
+
+<!-- Teacher List -->
+
+<div class="card">
+
+<h2>Teacher List</h2>
+
 <div id="teacherList">
 
 </div>
 
 </div>
+<!-- Attendance -->
 
 <div class="card">
 
+<h2>Attendance</h2>
+
+<p>এই ভার্সনে Attendance ফিচার পরবর্তী আপডেটে চালু হবে।</p>
+
+</div>
+
+<!-- Reports -->
+
+<div class="card">
+
+<h2>Reports</h2>
+
 <button onclick="downloadPDF()">
-
 📄 Download PDF
-
 </button>
 
 <button onclick="clearAll()">
+🗑 Delete All Teachers
+</button>
 
-🗑 Delete All
+</div>
 
+<!-- Edit Teacher Modal -->
+
+<div id="editModal" class="modal" style="display:none;">
+
+<div class="modal-content">
+
+<h2>Edit Teacher</h2>
+
+<input type="text" id="editName" placeholder="Teacher Name">
+
+<input type="text" id="editSubject" placeholder="Subject">
+
+<input type="text" id="editPhone" placeholder="Phone">
+
+<select id="editPaymentType">
+
+<option value="Monthly">Monthly</option>
+
+<option value="Per Class">Per Class</option>
+
+</select>
+
+<input type="number" id="editFee" placeholder="Fee">
+
+<input type="number" id="editPaymentDate" placeholder="Payment Date">
+
+<textarea id="editNote" rows="3" placeholder="Note"></textarea>
+
+<button onclick="saveEdit()">
+💾 Save Changes
+</button>
+
+<button onclick="closeEdit()">
+❌ Cancel
 </button>
 
 </div>
 
 </div>
+
+</div>
+
+<footer>
+
+<p>Teacher Pay V3 © 2026</p>
+
+</footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
