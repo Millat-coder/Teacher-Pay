@@ -4,74 +4,113 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Teacher Pay</title>
+<title>Teacher-Pay</title>
 
 <link rel="stylesheet" href="style.css">
+
+<!-- PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 
 <body>
 
+<header>
+
+<h1>📚 Teacher-Pay</h1>
+
+</header>
+
 <div class="container">
 
-<h1>Teacher Pay</h1>
+<div class="dashboard">
 
-<div id="authBox">
+<div class="box">
+<h2 id="teacherCount">0</h2>
+<p>Teachers</p>
+</div>
 
-<h2>Login</h2>
-
-<input type="email" id="loginEmail" placeholder="Email">
-
-<input type="password" id="loginPassword" placeholder="Password">
-
-<button id="loginBtn">Login</button>
-
-<p>Don't have an account?</p>
-
-<button id="showSignup">Create Account</button>
+<div class="box">
+<h2 id="totalDue">৳0</h2>
+<p>Total Due</p>
+</div>
 
 </div>
 
-
-<div id="signupBox" style="display:none;">
-
-<h2>Create Account</h2>
-
-<input type="email" id="signupEmail" placeholder="Email">
-
-<input type="password" id="signupPassword" placeholder="Password">
-
-<button id="signupBtn">Sign Up</button>
-
-<button id="showLogin">Back To Login</button>
-
-</div>
-
-
-<div id="dashboard" style="display:none;">
+<div class="card">
 
 <h2>Add Teacher</h2>
 
-<input type="text" id="teacherName" placeholder="Teacher Name">
+<input
+type="text"
+id="name"
+placeholder="Teacher Name">
 
-<input type="text" id="teacherSubject" placeholder="Subject">
+<input
+type="text"
+id="subject"
+placeholder="Subject">
 
-<input type="number" id="teacherFee" placeholder="Per Class Fee">
+<select id="paymentType">
 
-<button id="addTeacherBtn">Add Teacher</button>
+<option value="class">
+Per Class
+</option>
 
-<hr>
+<option value="monthly">
+Monthly
+</option>
 
-<div id="teacherList"></div>
+</select>
 
-<br>
+<input
+type="number"
+id="fee"
+placeholder="Fee">
 
-<button id="logoutBtn">Logout</button>
+<button onclick="addTeacher()">
+
+Add Teacher
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Teacher List</h2>
+
+<input
+type="text"
+id="search"
+placeholder="Search Teacher..."
+onkeyup="searchTeacher()">
+
+<div id="teacherList">
 
 </div>
 
 </div>
 
-<script type="module" src="firebase.js"></script>
+<div class="card">
+
+<button onclick="downloadPDF()">
+
+Download PDF
+
+</button>
+
+<button onclick="clearAll()">
+
+Delete All
+
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
