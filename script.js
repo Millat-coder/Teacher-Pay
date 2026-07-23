@@ -131,6 +131,25 @@ absent: 0
 
     saveData();
 
+    function markPresent(index){
+
+teachers[index].present++;
+
+saveData();
+
+renderTeachers();
+
+}
+
+function markAbsent(index){
+
+teachers[index].absent++;
+
+saveData();
+
+renderTeachers();
+
+}
     renderTeachers();
 
     document.getElementById("name").value = "";
